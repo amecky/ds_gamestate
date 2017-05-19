@@ -1,7 +1,8 @@
+#pragma once
 #include <stdint.h>
 #include <vector>
 
-#define DS_STATEMACHINE_IMPLEMENTATION
+//#define DS_STATEMACHINE_IMPLEMENTATION
 // ---------------------------------------------------------------
 // EventStream
 // This is a simple Blob that stores events. Usually events
@@ -11,8 +12,6 @@
 // to every active state. It is reset at the beginning of every
 // frame.
 // ---------------------------------------------------------------
-const int EVENT_HEADER_SIZE = 12;
-
 class EventStream {
 
 	struct EventHeader {
@@ -90,6 +89,8 @@ protected:
 };
 
 #ifdef DS_STATEMACHINE_IMPLEMENTATION
+
+const int EVENT_HEADER_SIZE = 12;
 
 const uint32_t FNV_Prime = 0x01000193; //   16777619
 const uint32_t FNV_Seed = 0x811C9DC5; // 2166136261
