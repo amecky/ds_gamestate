@@ -35,6 +35,7 @@ public:
 private:
 	void addHeader(uint32_t type, size_t size);
 	EventStream(const EventStream& orig) {}
+	void operator=(const EventStream& other) {}
 	char* _data;
 	std::vector<uint32_t> _mappings;
 	uint32_t _index;
